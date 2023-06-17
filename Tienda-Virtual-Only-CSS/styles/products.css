@@ -1,0 +1,131 @@
+
+.productos-container > a {
+    text-decoration: none;
+}
+
+.productos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto:hover {
+    transform: scale(0.95);
+}
+
+.producto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.producto-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.producto-info h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.producto-info p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #333;
+}
+
+.producto-info button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.producto-info button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+p.price {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #333;
+}
+
+/* responsive */
+
+@media (max-width: 1700px) {
+    section {
+        padding: 10% 10%;
+    }
+
+    .productos-container {
+        justify-content: center;
+    }
+
+    .producto {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 10% 5%;
+    }
+
+    .productos-container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .producto {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 425px) {
+    section {
+        padding: 10% 5%;
+    }
+
+    .productos-container {
+        justify-content: center;
+    }
+
+    .producto {
+        width: 250px;
+        height: 350px;
+    }
+}

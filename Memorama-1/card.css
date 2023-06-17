@@ -1,0 +1,438 @@
+@keyframes changeOrder {
+  from { z-index: 8;}
+  to { z-index: 1; }
+}
+
+label {
+  animation: changeOrder 1s infinite linear;
+  background: #ddd;
+  cursor: pointer;
+  display: block;
+  left: 1rem;
+  padding: 1rem;
+  position: absolute;
+  top: 1rem;
+  user-select: none;
+}
+
+label:nth-of-type(1) { animation-delay: 0s; }
+label:nth-of-type(2) { animation-delay: -0.5s; }
+label:nth-of-type(3) { animation-delay: -1.0s; }
+label:nth-of-type(4) { animation-delay: -1.5s; }
+label:nth-of-type(5) { animation-delay: -2.0s; }
+label:nth-of-type(6) { animation-delay: -2.5s; }
+label:nth-of-type(7) { animation-delay: -3.0s; }
+label:nth-of-type(8) { animation-delay: -3.5s; }
+label:nth-of-type(9) { animation-delay: -4.0s; }
+label:nth-of-type(10) { animation-delay: -4.5s; }
+label:nth-of-type(11) { animation-delay: -5.0s; }
+label:nth-of-type(12) { animation-delay: -5.5s; }
+label:nth-of-type(13) { animation-delay: -6.0s; }
+label:nth-of-type(14) { animation-delay: -6.5s; }
+label:nth-of-type(15) { animation-delay: -7.0s; }
+label:nth-of-type(16) { animation-delay: -7.5s; }
+
+
+
+
+
+/* #d1:checked go to parent element */
+
+/* Cuando un d1 este checkeado
+  entrar a main en main buscar el primer form y ponerlo en la posicion 2
+*/
+
+#d1:checked ~ main label:nth-of-type(1) {
+  order: 2;
+}
+#d1:checked ~ main label:nth-of-type(2) {
+  order: 1;
+}
+#d1:checked ~ main label:nth-of-type(3) {
+  order: 4;
+}
+#d1:checked ~ main label:nth-of-type(4) {
+  order: 7;
+}
+#d1:checked ~ main label:nth-of-type(5) {
+  order: 9;
+}
+#d1:checked ~ main label:nth-of-type(6) {
+  order: 5;
+}
+#d1:checked ~ main label:nth-of-type(7) {
+  order: 3;
+}
+#d1:checked ~ main label:nth-of-type(8) {
+  order: 6;
+}
+#d1:checked ~ main label:nth-of-type(9) {
+  order: 8;
+}
+#d1:checked ~ main label:nth-of-type(10) {
+  order: 16;
+}
+#d1:checked ~ main label:nth-of-type(11) {
+  order: 10;
+}
+#d1:checked ~ main label:nth-of-type(12) {
+  order: 11;
+}
+#d1:checked ~ main label:nth-of-type(13) {
+  order: 12;
+}
+#d1:checked ~ main label:nth-of-type(14) {
+  order: 13;
+}
+#d1:checked ~ main label:nth-of-type(15) {
+  order: 14;
+}
+#d1:checked ~ main label:nth-of-type(16) {
+  order: 15;
+}
+
+
+
+/* ------------ Dado 2 ---------------- */
+
+#d2:checked ~ main label:nth-of-type(1) {
+  order: 1;
+}
+
+#d2:checked ~ main label:nth-of-type(2) {
+  order: 4;
+}
+
+#d2:checked ~ main label:nth-of-type(3) {
+  order: 7;
+}
+
+#d2:checked ~ main label:nth-of-type(4) {
+  order: 8;
+}
+
+#d2:checked ~ main label:nth-of-type(5) {
+  order: 5;
+}
+
+#d2:checked ~ main label:nth-of-type(6) {
+  order: 2;
+}
+
+#d2:checked ~ main label:nth-of-type(7) {
+  order: 3;
+}
+
+#d2:checked ~ main label:nth-of-type(8) {
+  order: 6;
+}
+
+/* ------------ Dado 3 ---------------- */
+
+#d3:checked ~ main label:nth-of-type(1) {
+  order: 4;
+}
+
+#d3:checked ~ main label:nth-of-type(2) {
+  order: 7;
+}
+
+#d3:checked ~ main label:nth-of-type(3) {
+  order: 8;
+}
+
+#d3:checked ~ main label:nth-of-type(4) {
+  order: 5;
+}
+
+#d3:checked ~ main label:nth-of-type(5) {
+  order: 2;
+}
+
+#d3:checked ~ main label:nth-of-type(6) {
+  order: 1;
+}
+
+#d3:checked ~ main label:nth-of-type(7) {
+  order: 6;
+}
+
+#d3:checked ~ main label:nth-of-type(8) {
+  order: 3;
+}
+
+/* ------------ Dado 4 ---------------- */
+
+#d4:checked ~ main label:nth-of-type(1) {
+  order: 7;
+}
+
+#d4:checked ~ main label:nth-of-type(2) {
+  order: 8;
+}
+
+#d4:checked ~ main label:nth-of-type(3) {
+  order: 5;
+}
+
+#d4:checked ~ main label:nth-of-type(4) {
+  order: 2;
+}
+
+#d4:checked ~ main label:nth-of-type(5) {
+  order: 1;
+}
+
+#d4:checked ~ main label:nth-of-type(6) {
+  order: 6;
+}
+
+#d4:checked ~ main label:nth-of-type(7) {
+  order: 3;
+}
+
+#d4:checked ~ main label:nth-of-type(8) {
+  order: 4;
+}
+
+/* ------------ Dado 5 ---------------- */
+
+#d5:checked ~ main label:nth-of-type(1) {
+  order: 8;
+}
+
+#d5:checked ~ main label:nth-of-type(2) {
+  order: 5;
+}
+
+#d5:checked ~ main label:nth-of-type(3) {
+  order: 2;
+}
+
+#d5:checked ~ main label:nth-of-type(4) {
+  order: 1;
+}
+
+#d5:checked ~ main label:nth-of-type(5) {
+  order: 6;
+}
+
+#d5:checked ~ main label:nth-of-type(6) {
+  order: 3;
+}
+
+#d5:checked ~ main label:nth-of-type(7) {
+  order: 4;
+}
+
+#d5:checked ~ main label:nth-of-type(8) {
+  order: 7;
+}
+
+/* ------------ Dado 6 ---------------- */
+
+#d6:checked ~ main label:nth-of-type(1) {
+  order: 5;
+}
+
+#d6:checked ~ main label:nth-of-type(2) {
+  order: 2;
+}
+
+#d6:checked ~ main label:nth-of-type(3) {
+  order: 1;
+}
+
+#d6:checked ~ main label:nth-of-type(4) {
+  order: 6;
+}
+
+#d6:checked ~ main label:nth-of-type(5) {
+  order: 3;
+}
+
+#d6:checked ~ main label:nth-of-type(6) {
+  order: 4;
+}
+
+#d6:checked ~ main label:nth-of-type(7) {
+  order: 7;
+}
+
+#d6:checked ~ main label:nth-of-type(8) {
+  order: 8;
+}
+
+/* ------------ Dado 7 ---------------- */
+
+#d7:checked ~ main label:nth-of-type(1) {
+  order: 2;
+}
+
+#d7:checked ~ main label:nth-of-type(2) {
+  order: 1;
+}
+
+#d7:checked ~ main label:nth-of-type(3) {
+  order: 6;
+}
+
+#d7:checked ~ main label:nth-of-type(4) {
+  order: 3;
+}
+
+#d7:checked ~ main label:nth-of-type(5) {
+  order: 4;
+}
+
+#d7:checked ~ main label:nth-of-type(6) {
+  order: 7;
+}
+
+#d7:checked ~ main label:nth-of-type(7) {
+  order: 8;
+}
+
+#d7:checked ~ main label:nth-of-type(8) {
+  order: 5;
+}
+
+/* ------------ Dado 8 ---------------- */
+
+#d8:checked ~ main label:nth-of-type(1) {
+  order: 1;
+}
+
+#d8:checked ~ main label:nth-of-type(2) {
+  order: 6;
+}
+
+#d8:checked ~ main label:nth-of-type(3) {
+  order: 3;
+}
+
+#d8:checked ~ main label:nth-of-type(4) {
+  order: 4;
+}
+
+#d8:checked ~ main label:nth-of-type(5) {
+  order: 7;
+}
+
+#d8:checked ~ main label:nth-of-type(6) {
+  order: 8;
+}
+
+#d8:checked ~ main label:nth-of-type(7) {
+  order: 5;
+}
+
+#d8:checked ~ main label:nth-of-type(8) {
+  order: 2;
+}
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  position: relative;
+  color: white;
+  max-width: 200px;
+  max-height: 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+input[type="checkbox"] {
+  display: none; 
+}
+
+input:checked + label .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+input:checked + label {
+  pointer-events: none;
+}
+
+.flip-card-back,
+.flip-card-front {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    36deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(37, 37, 37, 1) 0%,
+    rgba(14, 14, 14, 1) 100%
+  );
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3), -4px 0 10px rgba(0, 0, 0, 0.2),
+    -5px 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.flip-card-back img,
+.flip-card-front img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+
+/* Create a random number and asign it to root */
+
+:root {
+  --random: calc(1 + var(--random));
+}
