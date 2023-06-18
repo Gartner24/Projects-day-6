@@ -324,11 +324,23 @@ label:nth-of-type(6) {
 }
 
 /* Cuando todas las cartas estan chequeadas display a .you-won-card flex */
-#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~
-#card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~
-#card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~
-#card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~
-.you-won-card {
+#card-1:checked
+  ~ #card-2:checked
+  ~ #card-3:checked
+  ~ #card-4:checked
+  ~ #card-5:checked
+  ~ #card-6:checked
+  ~ #card-7:checked
+  ~ #card-8:checked
+  ~ #card-9:checked
+  ~ #card-10:checked
+  ~ #card-11:checked
+  ~ #card-12:checked
+  ~ #card-13:checked
+  ~ #card-14:checked
+  ~ #card-15:checked
+  ~ #card-16:checked
+  ~ .you-won-card {
   display: flex;
 }
 
@@ -438,7 +450,6 @@ main {
   backface-visibility: hidden;
 }
 
-
 /* Voltear la carta cuando se clickea */
 
 input:checked + label .flip-card-inner {
@@ -447,12 +458,18 @@ input:checked + label .flip-card-inner {
 
 /* Bloquear la carta cuando se clickea */
 
-input:checked + label {
+/* input:checked + label {
   pointer-events: none;
-}
+} */
 /* #card-1:checked ~ #card-2:checked + label {
   pointer-events: none;
 } */
+
+#card-1:checked ~ #card-2:checked ~ .perrito-1,
+#card-1:checked ~ #card-2:checked ~ .perrito-2,
+{
+  pointer-events: none;
+}
 
 .you-won-card {
   display: none;
@@ -559,3 +576,10 @@ input:checked + label {
     padding: 0.5rem 0.8rem;
   }
 }
+
+/* si #card-1:checked ~ #card-2:checked activar alguna propiedad que se pueda capturar desde css en #pair-1 */
+
+#card-1:checked ~ #card-2:checked ~ #pair-1 {
+  /* change the value to 11 */
+}
+
