@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.producto-img{
+    overflow: hidden;
+}
+
 .producto {
     width: 250px;
     height: 350px;
