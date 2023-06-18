@@ -1,403 +1,407 @@
 @keyframes changeOrder {
-  from { z-index: 8;}
-  to { z-index: 1; }
+  from {
+    z-index: 6;
+  }
+  to {
+    z-index: 1;
+  }
 }
 
-label {
-  animation: changeOrder 1s infinite linear;
-  background: #ddd;
-  cursor: pointer;
-  display: block;
-  left: 1rem;
-  padding: 1rem;
-  position: absolute;
-  top: 1rem;
-  user-select: none;
+label:nth-of-type(1) {
+  animation-delay: 0s;
+}
+label:nth-of-type(2) {
+  animation-delay: -0.5s;
+}
+label:nth-of-type(3) {
+  animation-delay: -1s;
+}
+label:nth-of-type(4) {
+  animation-delay: -1.5s;
+}
+label:nth-of-type(5) {
+  animation-delay: -2s;
+}
+label:nth-of-type(6) {
+  animation-delay: -2.5s;
 }
 
-label:nth-of-type(1) { animation-delay: 0s; }
-label:nth-of-type(2) { animation-delay: -0.5s; }
-label:nth-of-type(3) { animation-delay: -1.0s; }
-label:nth-of-type(4) { animation-delay: -1.5s; }
-label:nth-of-type(5) { animation-delay: -2.0s; }
-label:nth-of-type(6) { animation-delay: -2.5s; }
-label:nth-of-type(7) { animation-delay: -3.0s; }
-label:nth-of-type(8) { animation-delay: -3.5s; }
-label:nth-of-type(9) { animation-delay: -4.0s; }
-label:nth-of-type(10) { animation-delay: -4.5s; }
-label:nth-of-type(11) { animation-delay: -5.0s; }
-label:nth-of-type(12) { animation-delay: -5.5s; }
-label:nth-of-type(13) { animation-delay: -6.0s; }
-label:nth-of-type(14) { animation-delay: -6.5s; }
-label:nth-of-type(15) { animation-delay: -7.0s; }
-label:nth-of-type(16) { animation-delay: -7.5s; }
-
-
-
-
-
-/* #d1:checked go to parent element */
-
-/* Cuando un d1 este checkeado
-  entrar a main en main buscar el primer form y ponerlo en la posicion 2
-*/
-
-#d1:checked ~ main label:nth-of-type(1) {
-  order: 2;
-}
-#d1:checked ~ main label:nth-of-type(2) {
-  order: 1;
-}
-#d1:checked ~ main label:nth-of-type(3) {
+/* --------------------- Dado 1 --------------------- */
+#d1:checked ~ main label:nth-of-type(12) {
   order: 4;
 }
-#d1:checked ~ main label:nth-of-type(4) {
-  order: 7;
+#d1:checked ~ main label:nth-of-type(2) {
+  order: 14;
 }
-#d1:checked ~ main label:nth-of-type(5) {
+#d1:checked ~ main label:nth-of-type(8) {
+  order: 1;
+}
+#d1:checked ~ main label:nth-of-type(15) {
+  order: 6;
+}
+#d1:checked ~ main label:nth-of-type(10) {
   order: 9;
 }
 #d1:checked ~ main label:nth-of-type(6) {
-  order: 5;
-}
-#d1:checked ~ main label:nth-of-type(7) {
-  order: 3;
-}
-#d1:checked ~ main label:nth-of-type(8) {
-  order: 6;
-}
-#d1:checked ~ main label:nth-of-type(9) {
-  order: 8;
-}
-#d1:checked ~ main label:nth-of-type(10) {
-  order: 16;
-}
-#d1:checked ~ main label:nth-of-type(11) {
-  order: 10;
-}
-#d1:checked ~ main label:nth-of-type(12) {
-  order: 11;
-}
-#d1:checked ~ main label:nth-of-type(13) {
-  order: 12;
+  order: 2;
 }
 #d1:checked ~ main label:nth-of-type(14) {
-  order: 13;
+  order: 11;
 }
-#d1:checked ~ main label:nth-of-type(15) {
-  order: 14;
+#d1:checked ~ main label:nth-of-type(3) {
+  order: 5;
+}
+#d1:checked ~ main label:nth-of-type(11) {
+  order: 8;
+}
+#d1:checked ~ main label:nth-of-type(9) {
+  order: 12;
 }
 #d1:checked ~ main label:nth-of-type(16) {
   order: 15;
 }
+#d1:checked ~ main label:nth-of-type(13) {
+  order: 10;
+}
+#d1:checked ~ main label:nth-of-type(7) {
+  order: 16;
+}
+#d1:checked ~ main label:nth-of-type(4) {
+  order: 3;
+}
+#d1:checked ~ main label:nth-of-type(5) {
+  order: 7;
+}
+#d1:checked ~ main label:nth-of-type(1) {
+  order: 13;
+}
 
-
-
-/* ------------ Dado 2 ---------------- */
-
+/* --------------------- Dado 2 --------------------- */
+#d2:checked ~ main label:nth-of-type(8) {
+  order: 4;
+}
+#d2:checked ~ main label:nth-of-type(11) {
+  order: 9;
+}
+#d2:checked ~ main label:nth-of-type(10) {
+  order: 3;
+}
+#d2:checked ~ main label:nth-of-type(14) {
+  order: 5;
+}
+#d2:checked ~ main label:nth-of-type(6) {
+  order: 14;
+}
+#d2:checked ~ main label:nth-of-type(12) {
+  order: 8;
+}
+#d2:checked ~ main label:nth-of-type(4) {
+  order: 11;
+}
+#d2:checked ~ main label:nth-of-type(3) {
+  order: 15;
+}
+#d2:checked ~ main label:nth-of-type(5) {
+  order: 2;
+}
 #d2:checked ~ main label:nth-of-type(1) {
   order: 1;
 }
-
-#d2:checked ~ main label:nth-of-type(2) {
-  order: 4;
-}
-
-#d2:checked ~ main label:nth-of-type(3) {
-  order: 7;
-}
-
-#d2:checked ~ main label:nth-of-type(4) {
-  order: 8;
-}
-
-#d2:checked ~ main label:nth-of-type(5) {
-  order: 5;
-}
-
-#d2:checked ~ main label:nth-of-type(6) {
-  order: 2;
-}
-
 #d2:checked ~ main label:nth-of-type(7) {
-  order: 3;
+  order: 12;
 }
-
-#d2:checked ~ main label:nth-of-type(8) {
+#d2:checked ~ main label:nth-of-type(2) {
   order: 6;
 }
-
-/* ------------ Dado 3 ---------------- */
-
-#d3:checked ~ main label:nth-of-type(1) {
-  order: 4;
+#d2:checked ~ main label:nth-of-type(15) {
+  order: 10;
 }
-
-#d3:checked ~ main label:nth-of-type(2) {
+#d2:checked ~ main label:nth-of-type(9) {
+  order: 13;
+}
+#d2:checked ~ main label:nth-of-type(16) {
+  order: 16;
+}
+#d2:checked ~ main label:nth-of-type(13) {
   order: 7;
 }
 
-#d3:checked ~ main label:nth-of-type(3) {
-  order: 8;
+/* --------------------- Dado 3 --------------------- */
+#d3:checked ~ main label:nth-of-type(7) {
+  order: 4;
 }
-
+#d3:checked ~ main label:nth-of-type(2) {
+  order: 12;
+}
+#d3:checked ~ main label:nth-of-type(9) {
+  order: 6;
+}
 #d3:checked ~ main label:nth-of-type(4) {
-  order: 5;
+  order: 9;
 }
-
 #d3:checked ~ main label:nth-of-type(5) {
-  order: 2;
+  order: 14;
 }
-
-#d3:checked ~ main label:nth-of-type(6) {
+#d3:checked ~ main label:nth-of-type(3) {
+  order: 15;
+}
+#d3:checked ~ main label:nth-of-type(1) {
   order: 1;
 }
-
-#d3:checked ~ main label:nth-of-type(7) {
-  order: 6;
+#d3:checked ~ main label:nth-of-type(11) {
+  order: 11;
 }
-
-#d3:checked ~ main label:nth-of-type(8) {
-  order: 3;
+#d3:checked ~ main label:nth-of-type(10) {
+  order: 2;
 }
-
-/* ------------ Dado 4 ---------------- */
-
-#d4:checked ~ main label:nth-of-type(1) {
-  order: 7;
-}
-
-#d4:checked ~ main label:nth-of-type(2) {
+#d3:checked ~ main label:nth-of-type(13) {
   order: 8;
 }
-
-#d4:checked ~ main label:nth-of-type(3) {
+#d3:checked ~ main label:nth-of-type(12) {
   order: 5;
 }
+#d3:checked ~ main label:nth-of-type(6) {
+  order: 3;
+}
+#d3:checked ~ main label:nth-of-type(15) {
+  order: 7;
+}
+#d3:checked ~ main label:nth-of-type(16) {
+  order: 13;
+}
+#d3:checked ~ main label:nth-of-type(14) {
+  order: 16;
+}
 
+/* --------------------- Dado 4 --------------------- */
+#d4:checked ~ main label:nth-of-type(2) {
+  order: 7;
+}
+#d4:checked ~ main label:nth-of-type(14) {
+  order: 6;
+}
+#d4:checked ~ main label:nth-of-type(12) {
+  order: 1;
+}
+#d4:checked ~ main label:nth-of-type(5) {
+  order: 10;
+}
+#d4:checked ~ main label:nth-of-type(11) {
+  order: 4;
+}
+#d4:checked ~ main label:nth-of-type(3) {
+  order: 11;
+}
+#d4:checked ~ main label:nth-of-type(6) {
+  order: 15;
+}
+#d4:checked ~ main label:nth-of-type(1) {
+  order: 12;
+}
+#d4:checked ~ main label:nth-of-type(16) {
+  order: 5;
+}
+#d4:checked ~ main label:nth-of-type(10) {
+  order: 9;
+}
 #d4:checked ~ main label:nth-of-type(4) {
   order: 2;
 }
-
-#d4:checked ~ main label:nth-of-type(5) {
-  order: 1;
-}
-
-#d4:checked ~ main label:nth-of-type(6) {
-  order: 6;
-}
-
 #d4:checked ~ main label:nth-of-type(7) {
+  order: 13;
+}
+#d4:checked ~ main label:nth-of-type(9) {
+  order: 16;
+}
+#d4:checked ~ main label:nth-of-type(8) {
+  order: 14;
+}
+#d4:checked ~ main label:nth-of-type(13) {
   order: 3;
 }
-
-#d4:checked ~ main label:nth-of-type(8) {
-  order: 4;
-}
-
-/* ------------ Dado 5 ---------------- */
-
-#d5:checked ~ main label:nth-of-type(1) {
+#d4:checked ~ main label:nth-of-type(15) {
   order: 8;
 }
 
-#d5:checked ~ main label:nth-of-type(2) {
-  order: 5;
+/* --------------------- Dado 5 --------------------- */
+#d5:checked ~ main label:nth-of-type(4) {
+  order: 4;
 }
-
+#d5:checked ~ main label:nth-of-type(9) {
+  order: 10;
+}
+#d5:checked ~ main label:nth-of-type(12) {
+  order: 6;
+}
+#d5:checked ~ main label:nth-of-type(5) {
+  order: 1;
+}
+#d5:checked ~ main label:nth-of-type(6) {
+  order: 13;
+}
 #d5:checked ~ main label:nth-of-type(3) {
   order: 2;
 }
-
-#d5:checked ~ main label:nth-of-type(4) {
-  order: 1;
-}
-
-#d5:checked ~ main label:nth-of-type(5) {
-  order: 6;
-}
-
-#d5:checked ~ main label:nth-of-type(6) {
-  order: 3;
-}
-
-#d5:checked ~ main label:nth-of-type(7) {
-  order: 4;
-}
-
 #d5:checked ~ main label:nth-of-type(8) {
   order: 7;
 }
-
-/* ------------ Dado 6 ---------------- */
-
-#d6:checked ~ main label:nth-of-type(1) {
+#d5:checked ~ main label:nth-of-type(11) {
+  order: 11;
+}
+#d5:checked ~ main label:nth-of-type(14) {
+  order: 9;
+}
+#d5:checked ~ main label:nth-of-type(2) {
+  order: 15;
+}
+#d5:checked ~ main label:nth-of-type(7) {
+  order: 3;
+}
+#d5:checked ~ main label:nth-of-type(13) {
+  order: 8;
+}
+#d5:checked ~ main label:nth-of-type(10) {
+  order: 14;
+}
+#d5:checked ~ main label:nth-of-type(1) {
+  order: 12;
+}
+#d5:checked ~ main label:nth-of-type(15) {
+  order: 16;
+}
+#d5:checked ~ main label:nth-of-type(16) {
   order: 5;
 }
 
-#d6:checked ~ main label:nth-of-type(2) {
-  order: 2;
-}
-
-#d6:checked ~ main label:nth-of-type(3) {
-  order: 1;
-}
-
-#d6:checked ~ main label:nth-of-type(4) {
-  order: 6;
-}
-
-#d6:checked ~ main label:nth-of-type(5) {
-  order: 3;
-}
-
-#d6:checked ~ main label:nth-of-type(6) {
-  order: 4;
-}
-
+/* --------------------- Dado 6 --------------------- */
 #d6:checked ~ main label:nth-of-type(7) {
+  order: 4;
+}
+#d6:checked ~ main label:nth-of-type(5) {
+  order: 10;
+}
+#d6:checked ~ main label:nth-of-type(14) {
   order: 7;
 }
-
+#d6:checked ~ main label:nth-of-type(11) {
+  order: 2;
+}
+#d6:checked ~ main label:nth-of-type(10) {
+  order: 13;
+}
+#d6:checked ~ main label:nth-of-type(13) {
+  order: 6;
+}
+#d6:checked ~ main label:nth-of-type(2) {
+  order: 9;
+}
+#d6:checked ~ main label:nth-of-type(3) {
+  order: 16;
+}
+#d6:checked ~ main label:nth-of-type(6) {
+  order: 12;
+}
 #d6:checked ~ main label:nth-of-type(8) {
-  order: 8;
+  order: 15;
 }
-
-/* ------------ Dado 7 ---------------- */
-
-#d7:checked ~ main label:nth-of-type(1) {
-  order: 2;
-}
-
-#d7:checked ~ main label:nth-of-type(2) {
+#d6:checked ~ main label:nth-of-type(1) {
   order: 1;
 }
-
-#d7:checked ~ main label:nth-of-type(3) {
-  order: 6;
-}
-
-#d7:checked ~ main label:nth-of-type(4) {
-  order: 3;
-}
-
-#d7:checked ~ main label:nth-of-type(5) {
-  order: 4;
-}
-
-#d7:checked ~ main label:nth-of-type(6) {
-  order: 7;
-}
-
-#d7:checked ~ main label:nth-of-type(7) {
-  order: 8;
-}
-
-#d7:checked ~ main label:nth-of-type(8) {
+#d6:checked ~ main label:nth-of-type(12) {
   order: 5;
 }
-
-/* ------------ Dado 8 ---------------- */
-
-#d8:checked ~ main label:nth-of-type(1) {
-  order: 1;
-}
-
-#d8:checked ~ main label:nth-of-type(2) {
-  order: 6;
-}
-
-#d8:checked ~ main label:nth-of-type(3) {
+#d6:checked ~ main label:nth-of-type(15) {
   order: 3;
 }
-
-#d8:checked ~ main label:nth-of-type(4) {
-  order: 4;
+#d6:checked ~ main label:nth-of-type(16) {
+  order: 11;
 }
-
-#d8:checked ~ main label:nth-of-type(5) {
-  order: 7;
-}
-
-#d8:checked ~ main label:nth-of-type(6) {
+#d6:checked ~ main label:nth-of-type(4) {
   order: 8;
 }
-
-#d8:checked ~ main label:nth-of-type(7) {
-  order: 5;
+#d6:checked ~ main label:nth-of-type(9) {
+  order: 14;
 }
 
-#d8:checked ~ main label:nth-of-type(8) {
-  order: 2;
+/* Cuando todas las cartas estan chequeadas display a .you-won-card flex */
+#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~
+#card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~
+#card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~
+#card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~
+.you-won-card {
+  display: flex;
 }
 
+/* tapar label-dice cuando clickeado */
+#d1:checked ~ .label-dice,
+#d2:checked ~ .label-dice,
+#d3:checked ~ .label-dice,
+#d4:checked ~ .label-dice,
+#d5:checked ~ .label-dice,
+#d6:checked ~ .label-dice {
+  display: none;
+}
 
+/* Mostrar main cuando clickeado */
+#d1:checked ~ main,
+#d2:checked ~ main,
+#d3:checked ~ main,
+#d4:checked ~ main,
+#d5:checked ~ main,
+#d6:checked ~ main {
+  display: grid;
+}
 
-
-
-
-
-
+/* Ocultar inputs para que no se vean los checkbox */
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
 
 * {
   margin: 0;
   padding: 0;
-  }
+}
 
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f5f5f5;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+  max-width: min-content;
+  display: none;
   padding: 0;
   margin: 0;
-  align-items: center;
-  justify-items: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 
 .flip-card {
   position: relative;
   color: white;
-  max-width: 200px;
-  max-height: 200px;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
   cursor: pointer;
-  border: none;
   background-color: transparent;
-  z-index: 2;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
 }
 
-.flip-card-inner{
+.flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-}
-
-input[type="checkbox"] {
-  display: none; 
-}
-
-input:checked + label .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-input:checked + label {
-  pointer-events: none;
-}
-
-.flip-card-back,
-.flip-card-front {
   background: rgb(2, 0, 36);
   background: linear-gradient(
     36deg,
@@ -405,13 +409,17 @@ input:checked + label {
     rgba(37, 37, 37, 1) 0%,
     rgba(14, 14, 14, 1) 100%
   );
+  border: 5px solid #fff;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3), -4px 0 10px rgba(0, 0, 0, 0.2),
     -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back,
+.flip-card-front {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  border-radius: 30px;
 }
 
 .flip-card-back img,
@@ -431,8 +439,123 @@ input:checked + label {
 }
 
 
-/* Create a random number and asign it to root */
+/* Voltear la carta cuando se clickea */
 
-:root {
-  --random: calc(1 + var(--random));
+input:checked + label .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Bloquear la carta cuando se clickea */
+
+input:checked + label {
+  pointer-events: none;
+}
+/* #card-1:checked ~ #card-2:checked + label {
+  pointer-events: none;
+} */
+
+.you-won-card {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.label-dice {
+  animation: changeOrder 6s infinite linear;
+  background: #ddd;
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  user-select: none;
+  position: absolute;
+  /* center it self*/
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.you-won-card h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.you-won-card button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.you-won-card a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+  .flip-card {
+    width: 100px;
+    height: 100px;
+  }
+  .flip-card-inner {
+    border: 3px solid #fff;
+  }
+  .flip-card-back img,
+  .flip-card-front img {
+    max-height: 100%;
+  }
+  .you-won-card {
+    width: 200px;
+    height: 200px;
+  }
+  .you-won-card h1 {
+    font-size: 1.5rem;
+  }
+  .you-won-card button {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    grid-gap: 5px;
+  }
+  .flip-card {
+    width: 80px;
+    height: 80px;
+  }
+  .flip-card-inner {
+    border: 2px solid #fff;
+  }
+  .flip-card-back img,
+  .flip-card-front img {
+    max-height: 100%;
+  }
+  .you-won-card {
+    width: 150px;
+    height: 150px;
+  }
+  .you-won-card h1 {
+    font-size: 1rem;
+  }
+  .you-won-card button {
+    padding: 0.5rem 0.8rem;
+  }
 }
