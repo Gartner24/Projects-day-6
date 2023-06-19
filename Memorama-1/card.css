@@ -1249,8 +1249,8 @@ main {
     max-height: 100%;
   }
   .you-won-card {
-    width: 150px;
-    height: 150px;
+    width: 90%;
+    height: 70%;
   }
   .you-won-card h1 {
     font-size: 1rem;
@@ -1259,10 +1259,3 @@ main {
     padding: 0.5rem 0.8rem;
   }
 }
-
-/* si #card-1:checked ~ #card-2:checked activar alguna propiedad que se pueda capturar desde css en #pair-1 */
-
-#card-1:checked ~ #card-2:checked ~ #pair-1 {
-  /* change the value to 11 */
-}
-
