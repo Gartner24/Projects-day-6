@@ -24,7 +24,7 @@ label:nth-of-type(5) {
 }
 label:nth-of-type(6) {
   animation-delay: -2.5s;
-}
+} 
 
 /* --------------------- Dado 1 --------------------- */
 #d1:checked ~ main label:nth-of-type(12) {order: 4;}
@@ -292,423 +292,867 @@ main {
 #card-13:checked + #card-14:checked ~ .carta-selector-14,
 #card-15:checked + #card-16:checked ~ .carta-selector-15,
 #card-15:checked + #card-16:checked ~ .carta-selector-16 {
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
-/* despues de 2 segundos rotar la carta */
+/* ------------------------------------- Bloquear todas las cartas cuando dos no son iguales -------------------------------------- */
+/* --------------------------------------------------- Patron para #card-1 --------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:checked ~ #card-4:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(3)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:not(:checked) ~ #card-4:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(4)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(5)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(7)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(9)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(11)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(13)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(15)),
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(16)),
 
 
-/* Voltear las cartas si las dos clickeadas no son iguales */
+/* --------------------------------------------------- Patron para #card-2 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-3 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:checked ~ #card-4:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(3)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:not(:checked) ~ #card-4:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(4)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(5)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(7)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(9)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(11)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(13)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(15)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(16)),
 
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
+/* --------------------------------------------------- Patron para #card-3 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:checked ~ #card-4:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(3)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:checked ~ #card-4:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(3)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(5)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(7)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(9)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(11)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(13)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(15)),
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(16))
 
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
+/* --------------------------------------------------- Patron para #card-4 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:not(:checked) ~ #card-4:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(4)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:not(:checked) ~ #card-4:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(4)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(5)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(7)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(9)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(11)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(13)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(15)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(16)),
 
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
+/* --------------------------------------------------- Patron para #card-5 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(5)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(5)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(5)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(5)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(7)),
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(9)),
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(11)),
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(13)),
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(15)),
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-6 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(6)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(6)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(6)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(7)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(9)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(11)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(13)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(15)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-7 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(7)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(7)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(7)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(7)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(7)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ label:not(:nth-of-type(6)):not(:nth-of-type(7)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(9)),
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(11)),
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(13)),
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(15)),
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-8 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(8)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(8)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(8)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ label:not(:nth-of-type(6)):not(:nth-of-type(8)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(9)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(11)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(13)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(15)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-9 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(9)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(9)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(9)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(9)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(9)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(6)):not(:nth-of-type(9)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(9)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ label:not(:nth-of-type(8)):not(:nth-of-type(9)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(11)),
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(13)),
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(15)),
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-10 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(10)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(10)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(10)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(6)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(10)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ label:not(:nth-of-type(8)):not(:nth-of-type(10)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(11)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(13)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(15)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-11 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(11)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(11)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(11)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(11)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(11)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(6)):not(:nth-of-type(11)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(11)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(8)):not(:nth-of-type(11)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(11)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ label:not(:nth-of-type(10)):not(:nth-of-type(11)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(13)),
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(15)),
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-12 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(12)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(12)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(12)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(6)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(12)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(8)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(12)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ label:not(:nth-of-type(10)):not(:nth-of-type(12)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(13)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(15)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-13 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(13)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(13)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(13)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(6)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(13)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(8)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(13)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(10)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(13)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ label:not(:nth-of-type(12)):not(:nth-of-type(13)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(13)):not(:nth-of-type(15)),
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(13)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-14 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(14)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(14)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(14)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(6)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(14)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(8)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(14)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(10)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(14)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ label:not(:nth-of-type(12)):not(:nth-of-type(14)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(14)):not(:nth-of-type(15)),
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(14)):not(:nth-of-type(16)),
+
+
+/* --------------------------------------------------- Patron para #card-15 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(15)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(2)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(3)):not(:nth-of-type(15)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(4)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(5)):not(:nth-of-type(15)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(6)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(7)):not(:nth-of-type(15)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(8)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(9)):not(:nth-of-type(15)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(10)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(11)):not(:nth-of-type(15)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(12)):not(:nth-of-type(15)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(13)):not(:nth-of-type(15)),
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ label:not(:nth-of-type(14)):not(:nth-of-type(15)),
+
+
+/* --------------------------------------------------- Patron para #card-16 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(1)):not(:nth-of-type(16)),
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(2)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(3)):not(:nth-of-type(16)),
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(4)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(5)):not(:nth-of-type(16)),
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(6)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(7)):not(:nth-of-type(16)),
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(8)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(9)):not(:nth-of-type(16)),
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(10)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(11)):not(:nth-of-type(16)),
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(12)):not(:nth-of-type(16)),
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(13)):not(:nth-of-type(16)),
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ label:not(:nth-of-type(14)):not(:nth-of-type(16)) {
+  pointer-events: none;
 }
 
-/* Para la combinacion #card-1 #card-5 pero la pareja #card-3 y #card-4 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
+/* ------------------------------------------- Mostrar mensaje para que el usuario gire la carta----------------------------------- */
+/* --------------------------------------------------- Patron para #card-1 --------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:checked ~ #card-4:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:not(:checked) ~ #card-4:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
 
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
+/* --------------------------------------------------- Patron para #card-2 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:checked ~ #card-4:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:not(:checked) ~ #card-4:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card
 
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
+/* --------------------------------------------------- Patron para #card-3 --------------------------------------------------- */
 
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:checked ~ #card-4:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:checked ~ #card-4:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
 
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
 
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+/* --------------------------------------------------- Patron para #card-4 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-3:not(:checked) ~ #card-4:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-3:not(:checked) ~ #card-4:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-5 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:checked ~ #card-6:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-6 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-5:not(:checked) ~ #card-6:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-7 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:checked ~ #card-8:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-8 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-7:not(:checked) ~ #card-8:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-9 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:checked ~ #card-10:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-10 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-9:not(:checked) ~ #card-10:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-11 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:checked ~ #card-12:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-12 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-11:not(:checked) ~ #card-12:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-13 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:checked ~ #card-14:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-14 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-13:not(:checked) ~ #card-14:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-15 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:checked ~ #card-16:not(:checked) ~ .please-turn-card,
+
+
+/* --------------------------------------------------- Patron para #card-16 --------------------------------------------------- */
+
+
+#card-1:checked ~ #card-2:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-1:not(:checked) ~ #card-2:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-3:checked ~ #card-4:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-3:not(:checked) ~ #card-4:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-5:checked ~ #card-6:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-5:not(:checked) ~ #card-6:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-7:checked ~ #card-8:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-7:not(:checked) ~ #card-8:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-9:checked ~ #card-10:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-9:not(:checked) ~ #card-10:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-11:checked ~ #card-12:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-11:not(:checked) ~ #card-12:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+#card-13:checked ~ #card-14:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
+#card-13:not(:checked) ~ #card-14:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card
+{
+  animation: show 0.5s ease-in-out forwards;
 }
 
-/* Para la combinacion #card-1 #card-3 pero la pareja #card-5 y #card-6 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
+/* Animation show and hide */
 
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+@keyframes show {
+  50% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Para la combinacion #card-1 #card-3 pero la pareja #card-7 y #card-8 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+.please-turn-card {
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5);
+  /* Centrar en el medio de arriba de la carta */
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-/* Para la combinacion #card-9 #card-10 pero la pareja #card-9 y #card-10 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+.alert {
+  position: relative;
+  top: 10;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.8;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 400;
 }
 
-/* Para la combinacion #card-9 #card-10 pero la pareja #card-11 y #card-12 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:checked + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-13 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-14 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+.alertText {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
 }
 
-/* Para la combinacion #card-9 #card-10 pero la pareja #card-13 y #card-14 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-3 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-5 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-6 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-7 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-8 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-9 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-10 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-11 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:not(:checked) ~ .carta-selector-12 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-15 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:checked + #card-16:not(:checked) ~ .carta-selector-15 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-16 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:checked + #card-15:not(:checked) + #card-16:checked ~ .carta-selector-16 .flip-card-inner {
-  transform: rotateY(0deg);
+.warning {
+  background-color: #FDF7DF;
+  border: 1px solid #FEEC6F;
+  color: #C9971C;
 }
 
-/* Para la combinacion #card-9 #card-10 pero la pareja #card-15 y #card-16 esta abierta */
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:checked + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-3 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-4 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:checked + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-4 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-5 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:checked + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-5 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-6 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:checked + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-6 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-7 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:checked + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-7 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-8 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:checked + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-8 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-9 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:checked + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-9 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-10 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:checked + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-10 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-11 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:checked + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-11 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-12 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:checked + #card-13:not(:checked) + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-12 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-13 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:checked + #card-14:not(:checked) + #card-15:checked + #card-16:checked ~ .carta-selector-13 .flip-card-inner,
-
-/* Para la combinacion #card-1 #card-14 */
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:checked + #card-16:checked ~ .carta-selector-1 .flip-card-inner,
-#card-1:checked + #card-2:not(:checked) + #card-3:not(:checked) + #card-4:not(:checked) + #card-5:not(:checked) + #card-6:not(:checked) + #card-7:not(:checked) + #card-8:not(:checked) + #card-9:not(:checked) + #card-10:not(:checked) + #card-11:not(:checked) + #card-12:not(:checked) + #card-13:not(:checked) + #card-14:checked + #card-15:checked + #card-16:checked ~ .carta-selector-14 .flip-card-inner {
-  transform: rotateY(0deg);
+.error {
+  background-color: #FEE;
+  border: 1px solid #EDD;
+  color: #A66;
 }
-
-/* Para la combinacion #card-1 #card-3 pero la pareja #card-3 y #card-4 esta abierta, y la pareja #card-5 y #card-6 esta abierta */
 
 .you-won-card {
   display: none;
