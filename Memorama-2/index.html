@@ -4,26 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="./logic/logic.css">
+    <link rel="stylesheet" href="./logic/logic.css" />
     <title>Document</title>
   </head>
   <body>
-    <input type="radio" id="d1" name="dice" />
-    <input type="radio" id="d2" name="dice" />
-    <input type="radio" id="d3" name="dice" />
-    <input type="radio" id="d4" name="dice" />
-    <input type="radio" id="d5" name="dice" />
-    <input type="radio" id="d6" name="dice" />
 
-    <label class="label-dice" for="d1">Start game</label>
-    <label class="label-dice" for="d2">Start game</label>
-    <label class="label-dice" for="d3">Start game</label>
-    <label class="label-dice" for="d4">Start game</label>
-    <label class="label-dice" for="d5">Start game</label>
-    <label class="label-dice" for="d6">Start game</label>
+    <header>
+      <div class="header-container">
+        <div class="header-container-logo">
+          <img src="./img/BootCamp.png" alt="logo" />
+        </div>
+        <div class="header-container-content">
+          <h1>Armemos el pesebre de navidad</h1>
+          <p>
+            Como es tradicion para cada diciembre armamos el pesebre para esperar la llegada del Niño Dios. Presiona cada tarjeta para descubrir un personaje, concentrate y encuentra su pareja, asi revelaras un personaje en el pesebre y descubriras un dato curioso sobre esta tradicion de navidad.
+          </p>
+        </div>
+    </header>
+
+    <input class="input-dice" type="radio" id="d1" name="dice" />
+    <input class="input-dice" type="radio" id="d2" name="dice" />
+    <input class="input-dice" type="radio" id="d3" name="dice" />
+    <input class="input-dice" type="radio" id="d4" name="dice" />
+    <input class="input-dice" type="radio" id="d5" name="dice" />
+    <input class="input-dice" type="radio" id="d6" name="dice" />
+
+
+    <!-- Muestra de aleatoriedad -->
+    <!-- <label class="label-dice" style="background-color: aquamarine;" for="d1">Comenzar</label>
+    <label class="label-dice" style="background-color: black;" for="d2">Comenzar</label>
+    <label class="label-dice" style="background-color: blue;" for="d3">Comenzar</label>
+    <label class="label-dice" style="background-color: brown;" for="d4">Comenzar</label>
+    <label class="label-dice" style="background-color: blueviolet;" for="d5">Comenzar</label>
+    <label class="label-dice" for="d6">Comenzar</label> -->
+
+    <label class="label-dice" for="d1">Comenzar</label>
+    <label class="label-dice" for="d2">Comenzar</label>
+    <label class="label-dice" for="d3">Comenzar</label>
+    <label class="label-dice" for="d4">Comenzar</label>
+    <label class="label-dice" for="d5">Comenzar</label>
+    <label class="label-dice" for="d6">Comenzar</label>
+    <img class="modal-intro" src="./img/modal-introNew.png" alt="modal-introNew">
+
+    <div class="background-opacity"></div>
 
     <main>
-      <input id="card-1" type="checkbox" />
+      <input type="checkbox" id="card-1" />
       <input type="checkbox" id="card-2" />
       <input type="checkbox" id="card-3" />
       <input type="checkbox" id="card-4" />
@@ -40,261 +66,235 @@
       <input type="checkbox" id="card-15" />
       <input type="checkbox" id="card-16" />
 
-      <label for="card-1" class="flip-card carta-selector-1">
+      <label
+        for="card-1"
+        class="flip-card carta-selector-1"
+        style="--delay: 0ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://cdn2.dineroenimagen.com/media/dinero/styles/gallerie/public/images/2019/01/2084092.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-001.png" alt="img-1" />
+            <audio src=""></audio>
+          </div>
+        </div>
+      </label>
+      <label
+        for="card-2"
+        class="flip-card carta-selector-2"
+        style="--delay: 100ms"
+      >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
+          </div>
+          <div class="flip-card-back">
+            <img src="./img/parejas-001.png" alt="img-1" />
           </div>
         </div>
       </label>
 
-      <label for="card-2" class="flip-card carta-selector-2">
+      <label
+        for="card-3"
+        class="flip-card carta-selector-3"
+        style="--delay: 200ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://cdn2.dineroenimagen.com/media/dinero/styles/gallerie/public/images/2019/01/2084092.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-002.png" alt="img-2" />
+          </div>
+        </div>
+      </label>
+      <label
+        for="card-4"
+        class="flip-card carta-selector-4"
+        style="--delay: 300"
+      >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
+          </div>
+          <div class="flip-card-back">
+            <img src="./img/parejas-002.png" alt="img-2" />
           </div>
         </div>
       </label>
 
-      <label for="card-3" class="flip-card carta-selector-3">
+      <label
+        for="card-5"
+        class="flip-card carta-selector-5"
+        style="--delay: 400ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://i.pinimg.com/originals/66/f6/a9/66f6a91bd55890f3b9565996b612fded.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-003.png" alt="img-3" />
           </div>
         </div>
       </label>
-      <label for="card-4" class="flip-card carta-selector-4">
+      <label
+        for="card-6"
+        class="flip-card carta-selector-6"
+        style="--delay: 500ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://i.pinimg.com/originals/66/f6/a9/66f6a91bd55890f3b9565996b612fded.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-003.png" alt="img-3" />
           </div>
         </div>
       </label>
-      <label for="card-5" class="flip-card carta-selector-5">
+
+      <label
+        for="card-7"
+        class="flip-card carta-selector-7"
+        style="--delay: 600ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://images.hola.com/imagenes/mascotas/20201104178485/consejos-gatos-para-principiantes/0-884-859/gatito-m.jpg?tx=w_680"
-              alt="img-1"
-            />
+            <img src="./img/parejas-004.png" alt="img-4" />
           </div>
         </div>
       </label>
-      <label for="card-6" class="flip-card carta-selector-6">
+      <label
+        for="card-8"
+        class="flip-card carta-selector-8"
+        style="--delay: 700ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://images.hola.com/imagenes/mascotas/20201104178485/consejos-gatos-para-principiantes/0-884-859/gatito-m.jpg?tx=w_680"
-              alt="img-1"
-            />
+            <img src="./img/parejas-004.png" alt="img-4" />
           </div>
         </div>
       </label>
-      <label for="card-7" class="flip-card carta-selector-7">
+
+      <label
+        for="card-9"
+        class="flip-card carta-selector-9"
+        style="--delay: 800ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://www.mundomar.es/wp-content/uploads/2022/02/MundoMar-07-Nutrias-11-scaled.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-005.png" alt="img-5" />
           </div>
         </div>
       </label>
-      <label for="card-8" class="flip-card carta-selector-8">
+      <label
+        for="card-10"
+        class="flip-card carta-selector-10"
+        style="--delay: 900ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://www.mundomar.es/wp-content/uploads/2022/02/MundoMar-07-Nutrias-11-scaled.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-005.png" alt="img-5" />
           </div>
         </div>
       </label>
-      <label for="card-9" class="flip-card carta-selector-9">
+
+      <label
+        for="card-11"
+        class="flip-card carta-selector-11"
+        style="--delay: 1000ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://w0.peakpx.com/wallpaper/89/46/HD-wallpaper-red-fox-red-beautiful-fox.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-006.png" alt="img-6" />
           </div>
         </div>
       </label>
-      <label for="card-10" class="flip-card carta-selector-10">
+      <label
+        for="card-12"
+        class="flip-card carta-selector-12"
+        style="--delay: 1100ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://w0.peakpx.com/wallpaper/89/46/HD-wallpaper-red-fox-red-beautiful-fox.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-006.png" alt="img-6" />
           </div>
         </div>
       </label>
-      <label for="card-11" class="flip-card carta-selector-11">
+
+      <label
+        for="card-13"
+        class="flip-card carta-selector-13"
+        style="--delay: 1200ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/000/718/255/large_2x/the-pretty-cow-photo.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-007.png" alt="img-7" />
           </div>
         </div>
       </label>
-      <label for="card-12" class="flip-card carta-selector-12">
+      <label
+        for="card-14"
+        class="flip-card carta-selector-14"
+        style="--delay: 1300ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/000/718/255/large_2x/the-pretty-cow-photo.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-007.png" alt="img-7" />
           </div>
         </div>
       </label>
-      <label for="card-13" class="flip-card carta-selector-13">
+
+      <label
+        for="card-15"
+        class="flip-card carta-selector-15"
+        style="--delay: 1400ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://us.123rf.com/450wm/thvideo/thvideo2303/thvideo230314426/200174673-lindo-y-divertido-panda-beb%C3%A9-colgando-de-bamb%C3%BA.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-008.png" alt="img-8" />
           </div>
         </div>
       </label>
-      <label for="card-14" class="flip-card carta-selector-14">
+      <label
+        for="card-16"
+        class="flip-card carta-selector-16"
+        style="--delay: 1500ms"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
+            <img src="./img/tarjeta_cubierta.png" alt="img-1" />
           </div>
           <div class="flip-card-back">
-            <img
-              src="https://us.123rf.com/450wm/thvideo/thvideo2303/thvideo230314426/200174673-lindo-y-divertido-panda-beb%C3%A9-colgando-de-bamb%C3%BA.jpg"
-              alt="img-1"
-            />
-          </div>
-        </div>
-      </label>
-      <label for="card-15" class="flip-card carta-selector-15">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              src="https://i.pinimg.com/originals/9a/03/ff/9a03ffd86b26131ae4eed072612be465.jpg"
-              alt="img-1"
-            />
-          </div>
-        </div>
-      </label>
-      <label for="card-16" class="flip-card carta-selector-16">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              src="https://img.freepik.com/iconos-gratis/comodin_318-1641.jpg"
-              alt="img-1"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              src="https://i.pinimg.com/originals/9a/03/ff/9a03ffd86b26131ae4eed072612be465.jpg"
-              alt="img-1"
-            />
+            <img src="./img/parejas-008.png" alt="img-8" />
           </div>
         </div>
       </label>
@@ -307,6 +307,7 @@
       </div>
 
       <div class="please-turn-card">
+        <!-- when displayed this card play audio -->
         <div class="alert error">
           <span class="alertText"
             >Por favor gira las cartas diferentes de nuevo para continuar.</span

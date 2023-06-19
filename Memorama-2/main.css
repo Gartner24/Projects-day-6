@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,22 +7,39 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f5f5f5;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(./img/estrellas.png);
+  background-color: #e9c97c;
 }
 
 main {
   max-width: min-content;
-  display: none;
+  display: grid;
+  pointer-events: none;
+  height: 100%;
   padding: 0;
   margin: 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
+  z-index: -3;
 }
+
+.background-opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+
 
 .flip-card {
   position: relative;
@@ -31,10 +49,28 @@ main {
   border-radius: 5px;
   cursor: pointer;
   background-color: transparent;
-  overflow: hidden;
-  z-index: 1;
-  border: none;
+  animation: cardAnimation 0.3s ease-in-out forwards ;
+  animation-delay: var(--delay);
+  opacity: 0;
 }
+
+/* When page start fade in the cards */
+@keyframes cardAnimation {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
 .flip-card-inner {
   position: relative;
@@ -42,16 +78,6 @@ main {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    36deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(37, 37, 37, 1) 0%,
-    rgba(14, 14, 14, 1) 100%
-  );
-  border: 5px solid #fff;
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3), -4px 0 10px rgba(0, 0, 0, 0.2),
-    -5px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-back,
@@ -59,7 +85,6 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .flip-card-back img,
@@ -70,18 +95,27 @@ main {
   transform: translate(-50%, -50%);
   max-height: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 .flip-card-back {
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  /* invert the y like if it was a mirror */
+  transform: rotateY(0deg);
+}
+
+.flip-card-back img {
+  width: 95%;
 }
 
 .please-turn-card {
   margin: 0;
   position: absolute;
-  opacity: 0;
+  display: none;
   transform: scale(0.5);
   top: 0;
   left: 0;
@@ -110,15 +144,15 @@ main {
 }
 
 .warning {
-  background-color: #FDF7DF;
-  border: 1px solid #FEEC6F;
-  color: #C9971C;
+  background-color: #fdf7df;
+  border: 1px solid #feec6f;
+  color: #c9971c;
 }
 
 .error {
-  background-color: #FEE;
-  border: 1px solid #EDD;
-  color: #A66;
+  background-color: #fee;
+  border: 1px solid #edd;
+  color: #a66;
 }
 
 .you-won-card {
@@ -139,18 +173,50 @@ main {
   z-index: 20;
 }
 
+.modal-intro {
+  width: 300px;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .label-dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 16px;
+  width: 150px;
+  height: 15px;
+  letter-spacing: 0.04em;
+  background: #ff9900;
+  box-shadow: 0px 6px 0px #a86500;
+  border-radius: 20px;
   animation: changeOrder 6s infinite linear;
-  background: #ddd;
   cursor: pointer;
-  display: block;
-  padding: 1rem;
   user-select: none;
   position: absolute;
-  /* center it self*/
   transform: translate(-50%, -50%);
-  top: 50%;
+    opacity: 1;
+  top: 60%;
   left: 50%;
+}
+
+/* Animation for changing order */
+
+@keyframes changeOrder {
+  from {
+    z-index: 6;
+  }
+  to {
+    z-index: 1;
+  }
 }
 
 .you-won-card h1 {
@@ -227,3 +293,9 @@ main {
   }
 }
 
+@media screen  and (max-width: 280px) {
+  .flip-card {
+    width: 60px;
+    height: 60px;
+  }
+}
