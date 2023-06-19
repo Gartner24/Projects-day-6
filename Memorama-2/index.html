@@ -8,20 +8,6 @@
     <title>Document</title>
   </head>
   <body>
-
-    <header>
-      <div class="header-container">
-        <div class="header-container-logo">
-          <img src="./img/BootCamp.png" alt="logo" />
-        </div>
-        <div class="header-container-content">
-          <h1>Armemos el pesebre de navidad</h1>
-          <p>
-            Como es tradicion para cada diciembre armamos el pesebre para esperar la llegada del Niño Dios. Presiona cada tarjeta para descubrir un personaje, concentrate y encuentra su pareja, asi revelaras un personaje en el pesebre y descubriras un dato curioso sobre esta tradicion de navidad.
-          </p>
-        </div>
-    </header>
-
     <input class="input-dice" type="radio" id="d1" name="dice" />
     <input class="input-dice" type="radio" id="d2" name="dice" />
     <input class="input-dice" type="radio" id="d3" name="dice" />
@@ -29,24 +15,45 @@
     <input class="input-dice" type="radio" id="d5" name="dice" />
     <input class="input-dice" type="radio" id="d6" name="dice" />
 
-
     <!-- Muestra de aleatoriedad -->
     <!-- <label class="label-dice" style="background-color: aquamarine;" for="d1">Comenzar</label>
-    <label class="label-dice" style="background-color: black;" for="d2">Comenzar</label>
-    <label class="label-dice" style="background-color: blue;" for="d3">Comenzar</label>
-    <label class="label-dice" style="background-color: brown;" for="d4">Comenzar</label>
-    <label class="label-dice" style="background-color: blueviolet;" for="d5">Comenzar</label>
-    <label class="label-dice" for="d6">Comenzar</label> -->
+    <label class="button label-dice" style="background-color: black;" for="d2">Comenzar</label>
+    <label class="button label-dice" style="background-color: blue;" for="d3">Comenzar</label>
+    <label class="button label-dice" style="background-color: brown;" for="d4">Comenzar</label>
+    <label class="button label-dice" style="background-color: blueviolet;" for="d5">Comenzar</label>
+    <label class="button label-dice" for="d6">Comenzar</label> -->
 
-    <label class="label-dice" for="d1">Comenzar</label>
-    <label class="label-dice" for="d2">Comenzar</label>
-    <label class="label-dice" for="d3">Comenzar</label>
-    <label class="label-dice" for="d4">Comenzar</label>
-    <label class="label-dice" for="d5">Comenzar</label>
-    <label class="label-dice" for="d6">Comenzar</label>
-    <img class="modal-intro" src="./img/modal-introNew.png" alt="modal-introNew">
-
+    <label class="button label-dice" for="d1">Comenzar</label>
+    <label class="button label-dice" for="d2">Comenzar</label>
+    <label class="button label-dice" for="d3">Comenzar</label>
+    <label class="button label-dice" for="d4">Comenzar</label>
+    <label class="button label-dice" for="d5">Comenzar</label>
+    <label class="button label-dice" for="d6">Comenzar</label>
+    <img
+      class="modal-intro"
+      src="./img/modal-introNew.png"
+      alt="modal-introNew"
+    />
     <div class="background-opacity"></div>
+
+    <header>
+      <div class="header-container">
+        <div class="header-container-logo">
+          <img src="./img/BootCamp.png" alt="logo" />
+        </div>
+
+        <div class="header-container-content">
+          <h1>Armemos el pesebre de navidad</h1>
+          <p>
+            Como es tradicion para cada diciembre armamos el pesebre para
+            esperar la llegada del Niño Dios. Presiona cada tarjeta para
+            descubrir un personaje, concentrate y encuentra su pareja, asi
+            revelaras un personaje en el pesebre y descubriras un dato curioso
+            sobre esta tradicion de navidad.
+          </p>
+        </div>
+      </div>
+    </header>
 
     <main>
       <input type="checkbox" id="card-1" />
@@ -300,20 +307,69 @@
       </label>
 
       <div class="you-won-card">
-        <h1>You Won!</h1>
-        <button>
-          <a href="./index.html">Play Again</a>
-        </button>
+        <div class="top-container">
+          <div class="left-container">
+            <img src="./img/modal/escena-pesebre.png" alt="escena-pesebre" />
+          </div>
+          <div class="right-container">
+            <h2>Armaste tu pesebre</h2>
+            <p>
+              Y junto con la esperanza de la llegada del Niño Dios te deseamos
+              de todo corazon que ese regalo que tanto has anhelado llegue a ti
+              en esta navidad.
+            </p>
+            <p>Felices fiestas te desea:</p>
+            <img src="./img/BootCamp.png" alt="logo" />
+            <a class="button you-won-card-button" href="./index.html"
+              >Volver a intentar</a
+            >
+          </div>
+        </div>
+        <div class="bottom-container">
+          <p>Compartir</p>
+          <a href="#">
+            <img src="./img/modal/twitter.svg" alt="twitter" />
+          </a>
+          <a href="#">
+            <img src="./img/modal/facebook.svg" alt="facebook" />
+          </a>
+          <a href="#">
+            <img src="./img/modal/linkedin.svg" alt="linkedin" />
+          </a>
+          <a href="#">
+            <img src="./img/modal/link.svg" alt="link" />
+          </a>
+        </div>
       </div>
 
       <div class="please-turn-card">
         <!-- when displayed this card play audio -->
         <div class="alert error">
-          <span class="alertText"
-            >Por favor gira las cartas diferentes de nuevo para continuar.</span
-          >
+          <span class="alertText">
+            <p>Por favor gira las cartas diferentes de nuevo para continuar.</p>
+          </span>
         </div>
       </div>
     </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-container-content">
+          <p>Somos</p>
+          <img src="./img/BootCamp.png" alt="logo" />
+          <p>
+            y te ayudamos a transformar el aprendizaje en experiencias
+            memorables
+          </p>
+        </div>
+        <div class="footer-container-social-logos">
+          <p>Siguenos</p>
+          <a href="#"><img src="./img/facebookED.png" alt="facebook" /></a>
+          <a href="#"><img src="./img/instagramED.png" alt="instagram" /></a>
+          <a href="#"><img src="./img/linkedinED.png" alt="twitter" /></a>
+          <a href="#" class="contactanos-button">Contactanos</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

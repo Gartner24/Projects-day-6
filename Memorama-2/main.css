@@ -6,23 +6,131 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f5f5f5;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-image: url(./img/estrellas.png);
   background-color: #e9c97c;
+}
+
+header {
+  max-height: 100px;
+  min-width: 100%;
+  height: 100px;
+  background-color: aliceblue;
+  z-index: -2;
+}
+
+.header-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.header-container-logo {
+  height: 100%;
+  background-color: #fff;
+  width: 40%;
+}
+
+.header-container-logo img {
+  max-height: 100%;
+  height: 100%;
+}
+
+.header-container-content {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 10px;
+}
+
+.header-container-content h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgb(102, 198, 166);
+}
+
+.header-container-content p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  min-width: 100%;
+  z-index: -2;
+  max-height: 100px;
+}
+
+.footer-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: aliceblue;
+}
+
+.footer-container-content {
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-container-content img {
+  height: 30px;
+  margin:0 10px;
+}
+
+.footer-container-social-logos {
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-container-social-logos img {
+  height: 100%;
+  margin:0 3px;
+  padding: 0;
+}
+
+.footer-container-social-logos a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-container-social-logos a.contactanos-button {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: #5fa3a5;
+  padding: 7px 10px;
+  border-radius: 8px;
 }
 
 main {
   max-width: min-content;
   display: grid;
   pointer-events: none;
-  height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 150px 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
@@ -30,16 +138,16 @@ main {
 }
 
 .background-opacity {
-  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  /* Put on top of the whole screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -2;
+
 }
-
-
 
 .flip-card {
   position: relative;
@@ -95,6 +203,7 @@ main {
   transform: translate(-50%, -50%);
   max-height: 100%;
   height: auto;
+  pointer-events: none;
 }
 
 .flip-card-back {
@@ -114,7 +223,7 @@ main {
 
 .please-turn-card {
   margin: 0;
-  position: absolute;
+  position: fixed;
   display: none;
   transform: scale(0.5);
   top: 0;
@@ -155,27 +264,9 @@ main {
   color: #a66;
 }
 
-.you-won-card {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 300px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2),
-    0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 20;
-}
-
 .modal-intro {
   width: 300px;
-  position: absolute;
+  position: fixed;
   top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -183,7 +274,7 @@ main {
   pointer-events: none;
 }
 
-.label-dice {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,15 +286,18 @@ main {
   width: 150px;
   height: 15px;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.label-dice {
   background: #ff9900;
   box-shadow: 0px 6px 0px #a86500;
-  border-radius: 20px;
   animation: changeOrder 6s infinite linear;
-  cursor: pointer;
   user-select: none;
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
-    opacity: 1;
   top: 60%;
   left: 50%;
 }
@@ -219,50 +313,163 @@ main {
   }
 }
 
-.you-won-card h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.you-won-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  width: 60%;
+  height: 300px;
+  background-color: #e7ce77;
+  border-radius: 10px;
+  border: 10px solid #ffc95d;
 }
 
-.you-won-card button {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #f5f5f5;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2),
-    0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+.you-won-card .top-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.you-won-card .top-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.you-won-card .right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: url(./img/estrellas.png);
+  background-color: #e9c97c;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.you-won-card .bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+}
+
+.you-won-card .bottom-container p {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.you-won-card .bottom-container a img {
+  width: 50px;
+  height: 50px;
+}
+
+.you-won-card-button {
+  background: #D7162F;
+  color: #fff;
+  box-shadow: 0px 6px 0px #880e1e;
 }
 
 .you-won-card a {
   text-decoration: none;
-  color: #000;
 }
 
 /* responsive */
+
+/* screens larger than 1440 auto bigg cards and footer and header */
+
+
+@media screen and (max-width: 1440px) {
+  main {
+    grid-gap: 5px;
+  }
+  .flip-card {
+    width: 130px;
+    height: 130px;
+  }
+  .you-won-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-container .header-container-logo {
+    height: 100%;
+  }
+
+  .header-container-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-container-content p {
+    font-size: 0.9rem;
+  }
+
+  .footer-container-content img {
+    height: 30px;
+  }
+
+  .footer-container-social-logos img {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    grid-gap: 5px;
+  }
+  .flip-card {
+    width: 120px;
+    height: 120px;
+  }
+  .you-won-card h1 {
+    font-size: 1.5rem;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  .header-container .header-container-logo {
+    width: 30%;
+  }
+
+  .header-container-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-container-content p {
+    font-size: 0.7rem;
+  }
+
+  .footer-container-content img {
+    height: 30px;
+  }
+  
+  .footer-container-social-logos img {
+    height: 100%;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .flip-card {
     width: 100px;
     height: 100px;
   }
-  .flip-card-inner {
-    border: 3px solid #fff;
-  }
-  .flip-card-back img,
-  .flip-card-front img {
-    max-height: 100%;
-  }
   .you-won-card {
-    width: 200px;
-    height: 200px;
-  }
-  .you-won-card h1 {
-    font-size: 1.5rem;
-  }
-  .you-won-card button {
-    padding: 0.5rem 0.8rem;
+    width: 90%;
+    height: 70%;
   }
 }
 
@@ -274,22 +481,9 @@ main {
     width: 80px;
     height: 80px;
   }
-  .flip-card-inner {
-    border: 2px solid #fff;
-  }
-  .flip-card-back img,
-  .flip-card-front img {
-    max-height: 100%;
-  }
   .you-won-card {
     width: 90%;
     height: 50%;
-  }
-  .you-won-card h1 {
-    font-size: 1rem;
-  }
-  .you-won-card button {
-    padding: 0.5rem 0.8rem;
   }
 }
 

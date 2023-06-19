@@ -17,14 +17,20 @@
       opacity: 1;
     }
     100% {
-      transform: translate(-50%, -40%);
       box-shadow: 0px 2px 0px #a86500;
       opacity: 0;
     }
 
 }
+
+.you-won-card-button:focus {
+  animation: press-button 0.3s forwards;
+  transform: translateY(2px);
+}
+
 .input-dice:checked ~ .label-dice{
   animation: press-button 0.3s forwards;
+  transform: translate(-50%, -40%);
 }
   
   /* Ocultar inputs para que no se vean los checkbox */
@@ -49,11 +55,11 @@
   
   @keyframes enable-main {
     0% {
-      z-index: -1;
+      z-index: -3;
       pointer-events: none;
     }
     99% {
-      z-index: -1;
+      z-index: -3;
       pointer-events: auto;
     }
     100% {
@@ -63,13 +69,9 @@
   }
 
   /* Mostrar main cuando se clickea un dado */
-  #d1:checked ~ main,
-  #d2:checked ~ main,
-  #d3:checked ~ main,
-  #d4:checked ~ main,
-  #d5:checked ~ main,
-  #d6:checked ~ main {
-    animation: enable-main 1.1s ease-in-out forwards;
+  .input-dice:checked ~ main,
+  .input-dice:checked ~ footer  {
+    animation: enable-main 1s ease-in-out forwards;
   }
 
   .label-dice:nth-of-type(1) {animation-delay: 0s;}
