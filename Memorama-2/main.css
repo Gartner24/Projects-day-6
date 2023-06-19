@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-image: url(./img/estrellas.png);
   background-color: #e9c97c;
 }
@@ -20,7 +21,7 @@ header {
   min-width: 100%;
   height: 100px;
   background-color: aliceblue;
-  z-index: -2;
+  z-index: -3;
 }
 
 .header-container {
@@ -65,9 +66,10 @@ header {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   height: 70px;
   min-width: 100%;
-  z-index: -2;
+  z-index: 0;
   max-height: 100px;
 }
 
@@ -130,7 +132,7 @@ main {
   display: grid;
   pointer-events: none;
   padding: 0;
-  margin: 150px 0;
+  margin: 100px 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
@@ -139,14 +141,14 @@ main {
 
 .background-opacity {
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
   /* Put on top of the whole screen */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
 }
 
 .flip-card {
@@ -278,13 +280,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 14px 16px;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   font-weight: 900;
-  font-size: 16px;
-  width: 150px;
-  height: 15px;
   letter-spacing: 0.04em;
   cursor: pointer;
   border-radius: 20px;
@@ -292,12 +290,16 @@ main {
 }
 
 .label-dice {
+  padding: 14px 16px;
   background: #ff9900;
   box-shadow: 0px 6px 0px #a86500;
   animation: changeOrder 6s infinite linear;
   user-select: none;
   position: fixed;
   transform: translate(-50%, -50%);
+  width: 150px;
+  height: 15px;
+  font-size: 16px;
   top: 60%;
   left: 50%;
 }
@@ -336,6 +338,13 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-height: 250px;
+  height:  250px;
+}
+
+.you-won-card .left-container {
+  width: 60%;
+  height: 100%;
 }
 
 .you-won-card .top-container img {
@@ -348,39 +357,69 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 40%;
   background-image: url(./img/estrellas.png);
   background-color: #e9c97c;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
 }
+
+.you-won-card .right-container img {
+    width: 130px;
+}
+
+.you-won-card .right-container h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #D7162F;
+  margin: 0 50px;
+}
+
+.you-won-card .right-container p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #000;
+  padding: 0;
+  text-align: center;
+  margin: 10px 20px;
+
+}
+
 
 .you-won-card .bottom-container {
   display: flex;
   flex-direction: row;
   justify-content: start;
+  align-items: center;
   width: 100%;
+  color: #fff;
+  background-color: #075048;
+  padding: 10px 0;
 }
 
 .you-won-card .bottom-container p {
   font-size: 1.2rem;
-  font-weight: 900;
-  color: #000;
+  font-weight: normal;
   margin: 0;
   padding: 0;
   text-align: center;
-  margin: 0 10px;
+  margin: 0 7px;
 }
 
 .you-won-card .bottom-container a img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 .you-won-card-button {
   background: #D7162F;
   color: #fff;
   box-shadow: 0px 6px 0px #880e1e;
+  width: 120px;
+  height: 10px;
+  font-size: 12px;
+  padding: 10px 3px;
 }
 
 .you-won-card a {
