@@ -257,31 +257,65 @@
 @keyframes falling-card {
   0% {
     /* bounce to the right */
-    transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(-0deg);
   }
   25% {
     /* bounce to the left */
-    transform: translateX(-10px) rotate(-10deg);
+    transform: translateX(-10px) rotate(10deg);
   }
   50% {
     /* bounce to the right */
-    transform: translateX(10px) rotate(10deg);
+    transform: translateX(10px) rotate(-10deg);
   }
   75% {
     /* bounce to the left */
-    transform: translateX(-10px) rotate(-10deg);
+    transform: translateX(-10px) rotate(10deg);
   }
   /* fall */
   100% {
-    transform: translateY(100vh) rotate(0deg);
+    transform: translateY(100vh) rotate(-0deg);
   }
 }
 
-#card-1:checked + #card-2:checked ~ .couple-finded-modal{
+@keyframes show-and-hide {
+  0% {
+    opacity: 1;
+    z-index: 21;
+  }
+  1% {
+    opacity: 1;
+    z-index: 21;
+  }
+  99% {
+    opacity: 1;
+    z-index: 21;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#card-1:checked + #card-2:checked ~ .couple-finded-modal:nth-of-type(1),
+#card-3:checked + #card-4:checked ~ .couple-finded-modal:nth-of-type(2),
+#card-5:checked + #card-6:checked ~ .couple-finded-modal:nth-of-type(3),
+#card-7:checked + #card-8:checked ~ .couple-finded-modal:nth-of-type(4),
+#card-9:checked + #card-10:checked ~ .couple-finded-modal:nth-of-type(5),
+#card-11:checked + #card-12:checked ~ .couple-finded-modal:nth-of-type(6),
+#card-13:checked + #card-14:checked ~ .couple-finded-modal:nth-of-type(7),
+#card-15:checked + #card-16:checked ~ .couple-finded-modal:nth-of-type(8) {
+  animation: show-and-hide 5s ease-in-out forwards;
   display: flex;
 }
 
-#card-1:checked + #card-2:checked ~ .couple-finded-modal #maria {
+#card-1:checked + #card-2:checked ~ .couple-finded-modal .maria,
+#card-3:checked + #card-4:checked ~ .couple-finded-modal .jose,
+#card-5:checked + #card-6:checked ~ .couple-finded-modal .jesus,
+#card-7:checked + #card-8:checked ~ .couple-finded-modal .melchor,
+#card-9:checked + #card-10:checked ~ .couple-finded-modal .gaspar,
+#card-11:checked + #card-12:checked ~ .couple-finded-modal .baltazar,
+#card-13:checked + #card-14:checked ~ .couple-finded-modal .pastor,
+#card-15:checked + #card-16:checked ~ .couple-finded-modal .mula-buey {
   animation: falling-card 2s ease-in-out forwards;
 }
 

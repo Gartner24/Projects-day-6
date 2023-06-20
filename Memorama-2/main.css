@@ -316,7 +316,6 @@ main {
 
 .main-modal {
   position: fixed;
-  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -330,13 +329,19 @@ main {
   z-index: 20;
 }
 
+.couple-finded-modal {
+  display: flex;
+  opacity: 0;
+  z-index: -1;
+}
+
 .couple-finded-modal .continuar-button {
   padding: 14px 16px;
   background: #ff9900;
   box-shadow: 0px 6px 0px #a86500;
   animation: changeOrder 6s infinite linear;
   user-select: none;
-  width: 120px;
+  width: fit-content;
   height: 10px;
   font-size: 12px;
   padding: 10px 3px;
@@ -344,6 +349,7 @@ main {
 
 .you-won-card {
   flex-direction: column;
+  display: none;
 }
 
 .you-won-card .top-container {
@@ -368,65 +374,54 @@ main {
   pointer-events: none;
 }
 
-@keyframes falling-image-like-sticker {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
 .couple-finded-modal .left-container img:not(:nth-of-type(1)) {
   position: absolute;
+  pointer-events: none;
 }
 
-.couple-finded-modal .left-container img#maria {
+.couple-finded-modal .left-container img.maria {
   width: 15%;
   bottom: 5%;
   left: 1%;
 }
 
-.couple-finded-modal .left-container img#jose {
+.couple-finded-modal .left-container img.jose {
   width: 10%;
   bottom: 15%;
   left: 3%;
 }
 
-.couple-finded-modal .left-container img#jesus {
+.couple-finded-modal .left-container img.jesus {
   width: 15%;
   bottom: 3%;
   left: 15%;
 }
 
-.couple-finded-modal .left-container img#melchor {
+.couple-finded-modal .left-container img.melchor {
   width: 18%;
   bottom: 8%;
   left: 28%;
 }
 
-.couple-finded-modal .left-container img#gaspar {
+.couple-finded-modal .left-container img.gaspar {
   width: 12%;
   bottom: 16%;
   left: 24%;
 }
 
-.couple-finded-modal .left-container img#baltazar {
+.couple-finded-modal .left-container img.baltazar {
   width: 12%;
   bottom: 20%;
   left: 14%;
 }
 
-.couple-finded-modal .left-container img#pastor {
+.couple-finded-modal .left-container img.pastor {
   width: 11%;
   bottom: 14%;
   left: 41.5%;
 }
 
-.couple-finded-modal .left-container img#mula-buey {
+.couple-finded-modal .left-container img.mula-buey {
   width: 12.5%;
   bottom: 0%;
   left: 47.5%;
