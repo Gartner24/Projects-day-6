@@ -45,7 +45,15 @@
     }
     100% {
       opacity: 0;
-      display: none;
+    }
+  }
+
+  @keyframes apear-opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 
@@ -57,6 +65,7 @@
   
   .input-dice:checked ~ main .background-opacity {
     animation: desapear-modals 1s ease-in-out forwards;
+    pointer-events: none;
   }
   
   @keyframes enable-main {
@@ -292,8 +301,27 @@
   }
   100% {
     opacity: 0;
-    z-index: -1;
+    z-index: -10;
   }
+}
+
+@keyframes show-and-hide-for-background {
+    0% {
+      opacity: 1;
+      z-index: 5;
+    }
+    1% {
+      opacity: 1;
+      z-index: 5;
+    }
+    99% {
+      opacity: 1;
+      z-index: 5;
+    }
+    100% {
+      opacity: 0;
+      z-index: -5;
+    }
 }
 
 #card-1:checked + #card-2:checked ~ .couple-finded-modal:nth-of-type(1),
@@ -307,6 +335,17 @@
   animation: show-and-hide 5s ease-in-out forwards;
   display: flex;
 }
+
+#card-1:checked + #card-2:checked ~ .background-opacity-1,
+#card-3:checked + #card-4:checked ~ .background-opacity-2,
+#card-5:checked + #card-6:checked ~ .background-opacity-3,
+#card-7:checked + #card-8:checked ~ .background-opacity-4,
+#card-9:checked + #card-10:checked ~ .background-opacity-5,
+#card-11:checked + #card-12:checked ~ .background-opacity-6,
+#card-13:checked + #card-14:checked ~ .background-opacity-7,
+#card-15:checked + #card-16:checked ~ .background-opacity-8 {
+  animation: show-and-hide-for-background 5s ease-in-out forwards;
+} 
 
 #card-1:checked + #card-2:checked ~ .couple-finded-modal .maria,
 #card-3:checked + #card-4:checked ~ .couple-finded-modal .jose,
@@ -1124,8 +1163,10 @@
 }
 
   /* Cuando todas las cartas estan chequeadas display a .you-won-card flex */
-#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .you-won-card,
-#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .background-opacity {
+#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .you-won-card
+ {
     display: flex;
   }
-  
+  #card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .background-opacity {
+    animation: apear-opacity 0.5s ease-in-out forwards;
+  }
