@@ -252,6 +252,39 @@
   pointer-events: none;
 }
 
+/* Mostrar modal de completacion de pareja */
+
+@keyframes falling-card {
+  0% {
+    /* bounce to the right */
+    transform: translateX(0px) rotate(0deg);
+  }
+  25% {
+    /* bounce to the left */
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  50% {
+    /* bounce to the right */
+    transform: translateX(10px) rotate(10deg);
+  }
+  75% {
+    /* bounce to the left */
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  /* fall */
+  100% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+}
+
+#card-1:checked + #card-2:checked ~ .couple-finded-modal{
+  display: flex;
+}
+
+#card-1:checked + #card-2:checked ~ .couple-finded-modal #maria {
+  animation: falling-card 2s ease-in-out forwards;
+}
+
 /* ------------------------------------- Bloquear todas las cartas cuando dos no son iguales -------------------------------------- */
 /* --------------------------------------------------- Patron para #card-1 --------------------------------------------------- */
 #card-1:checked ~ #card-2:not(:checked) ~ #card-3:checked ~ #card-4:not(:checked) ~ label:not(:nth-of-type(1)):not(:nth-of-type(3)),
