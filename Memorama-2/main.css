@@ -268,16 +268,19 @@ main {
   font-size: 16px;
 }
 
-.warning {
-  background-color: #fdf7df;
-  border: 1px solid #feec6f;
-  color: #c9971c;
-}
-
 .error {
-  background-color: #fee;
-  border: 1px solid #edd;
-  color: #a66;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50%;
+  background-color: #e7ce77;
+  border-radius: 10px;
+  border: 10px solid #ffc95d;
+  z-index: 20;
+  pointer-events: none;
 }
 
 .modal-intro {
@@ -627,7 +630,9 @@ main {
     font-size: 0.6rem;
   }
 
-  
+  .main-modal {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -700,6 +705,24 @@ main {
       justify-content: center;
       align-items: start;
   }
+  .main-modal {
+    width: 100%;
+  }
+
+  .couple-finded-modal .right-container h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .couple-finded-modal .right-container p {
+    font-size: 0.5rem;
+  }
+
+  .couple-finded-modal .button {
+    font-size: 0.5rem;
+    padding: 5px 10px;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -843,5 +866,9 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: start;
+  }
+
+  .please-turn-card .error p{
+    font-size: 0.8rem;
   }
 }
