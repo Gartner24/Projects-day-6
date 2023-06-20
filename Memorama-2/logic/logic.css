@@ -1,46 +1,104 @@
-/* Animation for changing order */
-
-@keyframes changeOrder {
-    from {
-      z-index: 6;
-    }
-    to {
-      z-index: 1;
-    }
-  }
-
 /* Animation show and hide */
 
-@keyframes show {
+@keyframes show-error {
     50% {
-      opacity: 0;
       transform: scale(0.5);
     }
     100% {
-      opacity: 1;
       transform: scale(1);
     }
   }
+
+@keyframes press-button {
+    0%{
+      background-color: #d58000;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 0px 2px 0px #a86500;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+}
+
+.you-won-card-button:focus {
+  animation: press-button 0.3s forwards;
+  transform: translateY(2px);
+}
+
+.input-dice:checked ~ .label-dice{
+  animation: press-button 0.3s forwards;
+  transform: translate(-50%, -40%);
+}
   
-  label:nth-of-type(1) {
-    animation-delay: 0s;
+  /* Ocultar inputs para que no se vean los checkbox */
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
   }
-  label:nth-of-type(2) {
-    animation-delay: -0.5s;
+  @keyframes desapear-modals {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
-  label:nth-of-type(3) {
-    animation-delay: -1s;
+
+  @keyframes apear-opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  label:nth-of-type(4) {
-    animation-delay: -1.5s;
+
+  /* tapar el boton de inicio cuando se clickean */
+  .input-dice:checked ~ .modal-intro {
+    animation: desapear-modals 1s ease-in-out forwards;
   }
-  label:nth-of-type(5) {
-    animation-delay: -2s;
-  }
-  label:nth-of-type(6) {
-    animation-delay: -2.5s;
-  } 
+
   
+  .input-dice:checked ~ main .background-opacity {
+    animation: desapear-modals 1s ease-in-out forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes enable-main {
+    0% {
+      z-index: -3;
+      pointer-events: none;
+    }
+    99% {
+      z-index: -3;
+      pointer-events: auto;
+    }
+    100% {
+      z-index: 0;
+      pointer-events: auto;
+    }
+  }
+
+  /* Mostrar main cuando se clickea un dado */
+  .input-dice:checked ~ main {
+    animation: enable-main 1s ease-in-out forwards;
+  }
+  
+  .input-dice:checked ~ main .background-opacity {
+    animation: desapear-modals 1s ease-in-out forwards;
+  }
+
+  .label-dice:nth-of-type(1) {animation-delay: 0s;}
+  .label-dice:nth-of-type(2) {animation-delay: -0.2s;}
+  .label-dice:nth-of-type(3) {animation-delay: -0.4s;}
+  .label-dice:nth-of-type(4) {animation-delay: -0.6s;}
+  .label-dice:nth-of-type(5) {animation-delay: -0.8s;}
+  .label-dice:nth-of-type(6) {animation-delay: -1s;}
+
   /* --------------------- Dado 1 --------------------- */
   #d1:checked ~ main label:nth-of-type(12) {order: 4;}
   #d1:checked ~ main label:nth-of-type(2) {order: 14;}
@@ -144,7 +202,7 @@
   #d6:checked ~ main label:nth-of-type(9) {order: 14;}
 
   
-/* Voltear la carta cuando se clickea */
+/* Voltear la carta cuando se clickea y hacerla como un espejo */
 #card-1:checked ~ .carta-selector-1 .flip-card-inner,
 #card-2:checked ~ .carta-selector-2 .flip-card-inner,
 #card-3:checked ~ .carta-selector-3 .flip-card-inner,
@@ -161,6 +219,25 @@
 #card-14:checked ~ .carta-selector-14 .flip-card-inner,
 #card-15:checked ~ .carta-selector-15 .flip-card-inner,
 #card-16:checked ~ .carta-selector-16 .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#card-1:checked ~ .carta-selector-1 .flip-card-front,
+#card-3:checked ~ .carta-selector-3 .flip-card-front,
+#card-2:checked ~ .carta-selector-2 .flip-card-front,
+#card-4:checked ~ .carta-selector-4 .flip-card-front,
+#card-5:checked ~ .carta-selector-5 .flip-card-front,
+#card-6:checked ~ .carta-selector-6 .flip-card-front,
+#card-7:checked ~ .carta-selector-7 .flip-card-front,
+#card-8:checked ~ .carta-selector-8 .flip-card-inner,
+#card-9:checked ~ .carta-selector-9 .flip-card-front,
+#card-10:checked ~ .carta-selector-10 .flip-card-front,
+#card-11:checked ~ .carta-selector-11 .flip-card-front,
+#card-12:checked ~ .carta-selector-12 .flip-card-front,
+#card-13:checked ~ .carta-selector-13 .flip-card-front,
+#card-14:checked ~ .carta-selector-14 .flip-card-front,
+#card-15:checked ~ .carta-selector-15 .flip-card-front,
+#card-16:checked ~ .carta-selector-16 .flip-card-front {
   transform: rotateY(180deg);
 }
 
@@ -182,6 +259,103 @@
 #card-15:checked + #card-16:checked ~ .carta-selector-15,
 #card-15:checked + #card-16:checked ~ .carta-selector-16 {
   pointer-events: none;
+}
+
+/* Mostrar modal de completacion de pareja */
+
+@keyframes falling-card {
+  0% {
+    /* bounce to the right */
+    transform: translateX(0px) rotate(-0deg);
+  }
+  25% {
+    /* bounce to the left */
+    transform: translateX(-10px) rotate(10deg);
+  }
+  50% {
+    /* bounce to the right */
+    transform: translateX(10px) rotate(-10deg);
+  }
+  75% {
+    /* bounce to the left */
+    transform: translateX(-10px) rotate(10deg);
+  }
+  /* fall */
+  100% {
+    transform: translateY(100vh) rotate(-0deg);
+  }
+}
+
+@keyframes show-and-hide {
+  0% {
+    opacity: 1;
+    z-index: 21;
+  }
+  1% {
+    opacity: 1;
+    z-index: 21;
+  }
+  99% {
+    opacity: 1;
+    z-index: 21;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+@keyframes show-and-hide-for-background {
+    0% {
+      opacity: 1;
+      z-index: 5;
+    }
+    1% {
+      opacity: 1;
+      z-index: 5;
+    }
+    99% {
+      opacity: 1;
+      z-index: 5;
+    }
+    100% {
+      opacity: 0;
+      z-index: -5;
+    }
+}
+
+#card-1:checked + #card-2:checked ~ .couple-finded-modal:nth-of-type(1),
+#card-3:checked + #card-4:checked ~ .couple-finded-modal:nth-of-type(2),
+#card-5:checked + #card-6:checked ~ .couple-finded-modal:nth-of-type(3),
+#card-7:checked + #card-8:checked ~ .couple-finded-modal:nth-of-type(4),
+#card-9:checked + #card-10:checked ~ .couple-finded-modal:nth-of-type(5),
+#card-11:checked + #card-12:checked ~ .couple-finded-modal:nth-of-type(6),
+#card-13:checked + #card-14:checked ~ .couple-finded-modal:nth-of-type(7),
+#card-15:checked + #card-16:checked ~ .couple-finded-modal:nth-of-type(8) {
+  animation: show-and-hide 5s ease-in-out forwards;
+  display: flex;
+}
+
+#card-1:checked + #card-2:checked ~ .background-opacity-1,
+#card-3:checked + #card-4:checked ~ .background-opacity-2,
+#card-5:checked + #card-6:checked ~ .background-opacity-3,
+#card-7:checked + #card-8:checked ~ .background-opacity-4,
+#card-9:checked + #card-10:checked ~ .background-opacity-5,
+#card-11:checked + #card-12:checked ~ .background-opacity-6,
+#card-13:checked + #card-14:checked ~ .background-opacity-7,
+#card-15:checked + #card-16:checked ~ .background-opacity-8 {
+  animation: show-and-hide-for-background 5s ease-in-out forwards;
+} 
+
+#card-1:checked + #card-2:checked ~ .couple-finded-modal .maria,
+#card-3:checked + #card-4:checked ~ .couple-finded-modal .jose,
+#card-5:checked + #card-6:checked ~ .couple-finded-modal .jesus,
+#card-7:checked + #card-8:checked ~ .couple-finded-modal .melchor,
+#card-9:checked + #card-10:checked ~ .couple-finded-modal .gaspar,
+#card-11:checked + #card-12:checked ~ .couple-finded-modal .baltazar,
+#card-13:checked + #card-14:checked ~ .couple-finded-modal .pastor,
+#card-15:checked + #card-16:checked ~ .couple-finded-modal .mula-buey {
+  animation: falling-card 2s ease-in-out forwards;
 }
 
 /* ------------------------------------- Bloquear todas las cartas cuando dos no son iguales -------------------------------------- */
@@ -983,53 +1157,16 @@
 #card-13:checked ~ #card-14:not(:checked) ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card,
 #card-13:not(:checked) ~ #card-14:checked ~ #card-15:not(:checked) ~ #card-16:checked ~ .please-turn-card
 {
-  animation: show 0.5s ease-in-out forwards;
+  animation: show-error 0.5s ease-in-out forwards;
+  display: flex;
   pointer-events: none;
 }
-  
+
   /* Cuando todas las cartas estan chequeadas display a .you-won-card flex */
-  #card-1:checked
-    ~ #card-2:checked
-    ~ #card-3:checked
-    ~ #card-4:checked
-    ~ #card-5:checked
-    ~ #card-6:checked
-    ~ #card-7:checked
-    ~ #card-8:checked
-    ~ #card-9:checked
-    ~ #card-10:checked
-    ~ #card-11:checked
-    ~ #card-12:checked
-    ~ #card-13:checked
-    ~ #card-14:checked
-    ~ #card-15:checked
-    ~ #card-16:checked
-    ~ .you-won-card {
+#card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .you-won-card
+ {
     display: flex;
   }
-  
-  /* tapar label-dice cuando clickeado */
-  #d1:checked ~ .label-dice,
-  #d2:checked ~ .label-dice,
-  #d3:checked ~ .label-dice,
-  #d4:checked ~ .label-dice,
-  #d5:checked ~ .label-dice,
-  #d6:checked ~ .label-dice {
-    display: none;
-  }
-  
-  /* Mostrar main cuando clickeado */
-  #d1:checked ~ main,
-  #d2:checked ~ main,
-  #d3:checked ~ main,
-  #d4:checked ~ main,
-  #d5:checked ~ main,
-  #d6:checked ~ main {
-    display: grid;
-  }
-  
-  /* Ocultar inputs para que no se vean los checkbox */
-  input[type="checkbox"],
-  input[type="radio"] {
-    display: none;
+  #card-1:checked ~ #card-2:checked ~ #card-3:checked ~ #card-4:checked ~ #card-5:checked ~ #card-6:checked ~ #card-7:checked ~ #card-8:checked ~ #card-9:checked ~ #card-10:checked ~ #card-11:checked ~ #card-12:checked ~ #card-13:checked ~ #card-14:checked ~ #card-15:checked ~ #card-16:checked ~ .background-opacity {
+    animation: apear-opacity 0.5s ease-in-out forwards;
   }
