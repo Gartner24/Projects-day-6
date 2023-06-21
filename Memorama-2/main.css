@@ -313,12 +313,12 @@ main {
   animation: changeOrder 6s infinite linear;
   user-select: none;
   position: fixed;
+  top: 63%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 150px;
   height: 15px;
   font-size: 16px;
-  top: 60%;
-  left: 50%;
 }
 
 /* Animation for changing order */
